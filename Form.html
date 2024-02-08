@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Donation Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<header class="head2">
+    <nav class="nav">
+        <h1>TuniC<img src="images/icon0.png" alt=""  width="25">re</h1> 
+        <ul>
+            <li> <a href="Home.html" href="#">Home</a> </li>
+            <li> <a href="Form.html">Donation Form</a> </li>
+            <li> <a href="Event.html">Events</a> </li>
+            <li> <a href="#contact">Contact us</a> </li>
+        </ul>
+    </nav> 
+</header>
+
+
+<body>
+         
+    <div>
+        <h2 class="hf">Fill the form bellow to donate!</h2>
+        <div>
+            <div class="container"> 
+                <form class="formulaire" name="f" method="POST" onsubmit="test(event)">
+                    <div class="form-row">
+                        <div class="form-group1">
+                            <label for="inputfirst">First Name<strong>*</strong></label>
+                            <input type="text" name="first" class="form-control" id="inputfirst">
+                        </div>
+                        <div class="form-group1">
+                            <label for="inputlast">Last Name<strong>*</strong></label>
+                            <input type="text" name="last" class="form-control" id="inputlast">
+                        </div>
+                        <div class="form-group2">
+                            <label for="inputcard">ID-Card<strong>*</strong></label>
+                            <input type="text" name="card" class="form-control" id="inputcard">
+                        </div>
+                        <div class="form-group3">
+                            <label for="inputemail">E-mail<strong>*</strong></label>
+                            <input type="email" class="form-control" name ="email" id="inputemail" placeholder="exemple:  name@gmail.com">
+                        </div>
+                        <div class="form-group3">
+                            <label for="inputphone">Phone<strong>*</strong></label>
+                            <input type="tel" name="tel" class="form-control" id="inputphone">
+                        </div>
+                        <div class="form-group4">
+                            <label for="inputcompany">Company Name</label>
+                            <input type="text" name="company" class="form-control" id="inputcompany" placeholder="Company name is">
+                        </div>
+                    </div>
+                    <div class="form-group5">
+                        <label for="inputdonate">what are you going to donate?<strong>*</strong></label>
+                        <select id="inputdonate" name="todonate" class="form-control">
+                            <option selected value="3">Choose...</option>
+                            <option value="c">Clothes</option>
+                            <option value="s">School-tools</option>
+                            <option value="f">Food</option>
+                            <option value="u">Furniture</option>
+                        </select>
+                    </div>
+                    <p><strong>*</strong>Required field</p>
+                    <button class="button" type="submit" value="Donate">Donate</button>
+                </form> 
+            </div> 
+        </div>
+    </div> 
+    <!--..................................................................J.SCRIPT................................................................-->
+    <script>
+        function test(event) {
+            event.preventDefault();
+            var x;
+            var y;
+    
+            if (f.first.value == "") {
+                alert("Please enter your first name!");
+                return false;
+            }
+    
+            if (f.last.value == "") {
+                alert("Please enter your last name!");
+                return false;
+            }
+    
+            if (f.card.value == "") {
+                alert("Please enter your ID card!");
+                return false;
+            } else if (isNaN(f.card.value)) {
+                alert("Please enter a valid ID card number!");
+                return false;
+            }
+            x = f.card.value;
+    
+            if (f.email.value == "") {
+                alert("Please enter your email address!");
+                return false;
+            }
+    
+            if (f.tel.value == "") {
+                alert("Please enter your phone number!");
+                return false;
+            }
+            y = f.tel.value;
+            if (isNaN(y)) {
+                alert("Please enter a valid phone number!");
+                return false;
+            }
+    
+            if (f.todonate.selectedIndex == 0) {
+                alert("Please select a choice!");
+                return false;
+            }
+            alert("Thank you for making the world a better place ♥");
+            
+
+            f.reset();
+        }
+    
+       
+    </script>
+    
+
+      <footer id="contact">
+        <h2 id="foot">Thank you for your trust!</h2>
+        <div class="div">
+            <ul>
+               <li>
+                   <span class="icon"> <i class="fa fa-phone" aria-hidden="true"></i></span>
+                   <span class="text" ><a href="tel:+21635789142">28470224</a></span>
+               </li>
+               <li>
+                   <span class="icon"> <i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                   <span class="text" ><a href="mailto:TuniCare@gmail.com" > TuniCare@gmail.com</a></span>
+               </li>
+               <li>
+                   <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i> </span>
+                   <span class="text" ><a>Sousse</a></span>
+               </li>
+               <li>
+                   <span class="icon"> <i class="fa fa-facebook" aria-hidden="true"></i></span>
+                   <span class="text" ><a href="https://www.facebook.com/tunicare" target="_blank">TuniCare</a></span>
+               </li>
+           </ul>
+        </div>
+    </footer>
+</body>
+</html>
